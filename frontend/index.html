@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JkpgCity Venues</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Jönköping City Venues</h1>
+        <div class="filters">
+            <select id="district-filter">
+                <option value="">All Districts</option>
+                <option value="Öster">Öster</option>
+                <option value="Väster">Väster</option>
+                <option value="Centrum">Centrum</option>
+            </select>
+            <button id="add-venue-btn" class="action-button">Add New Venue</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="venues-container">
+            <div id="venues-list"></div>
+            <div id="pagination">
+                <button id="prev-page">Previous</button>
+                <span id="page-info">Page 1</span>
+                <button id="next-page">Next</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="venue-form-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add New Venue</h2>
+            <form id="venue-form">
+                <input type="text" id="venue-name" placeholder="Venue Name" required>
+                <input type="text" id="venue-url" placeholder="Website URL">
+                <select id="venue-district">
+                    <option value="">Select District</option>
+                    <option value="Öster">Öster</option>
+                    <option value="Väster">Väster</option>
+                    <option value="Centrum">Centrum</option>
+                </select>
+                <div class="form-buttons">
+                    <button type="submit" class="action-button">Add Venue</button>
+                    <button type="button" id="close-modal" class="cancel-button">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
