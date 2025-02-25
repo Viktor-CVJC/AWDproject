@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const editId = venueForm.dataset.editId;
         const method = editId ? 'PUT' : 'POST';
         const url = editId 
-            ? `http://localhost:5000/api/venues/${editId}`
-            : 'http://localhost:5000/api/venues';
+            ? `http://localhost:3000/api/venues/${editId}`
+            : 'http://localhost:3000/api/venues';
 
         try {
             const response = await fetch(url, {
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function fetchVenues() {
     console.log('Fetching page:', currentPage, 'District:', selectedDistrict);
     try {
-        let url = `http://localhost:5000/api/venues?page=${currentPage}&limit=${venuesPerPage}`;
+        let url = `http://localhost:3000/api/venues?page=${currentPage}&limit=${venuesPerPage}`;
         if (selectedDistrict) {
             url += `&district=${selectedDistrict}`;
         }
@@ -156,7 +156,7 @@ function displayVenues(venues) {
 
 
 async function editVenue(venueId) {
-    const response = await fetch(`http://localhost:5000/api/venues/${venueId}`);
+    const response = await fetch(`http://localhost:3000/api/venues/${venueId}`);
     const venue = await response.json();
     
     // Populate form with venue data
@@ -173,7 +173,7 @@ async function editVenue(venueId) {
 async function deleteVenue(venueId) {
     if (confirm('Are you sure you want to delete this venue?')) {
         try {
-            await fetch(`http://localhost:5000/api/venues/${venueId}`, {
+            await fetch(`http://localhost:3000/api/venues/${venueId}`, {
                 method: 'DELETE'
             });
             fetchVenues();
