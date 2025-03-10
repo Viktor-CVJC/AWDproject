@@ -10,11 +10,11 @@ app.use(cors());
 app.use(express.json());
 
 //MongoDB connection
-mongoose.connect('mongodb://localhost:27017/jkpgcity', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://mongodb:27017/jkpgcity', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
-    console.log('Connected to mongoDB');
+    console.log('Connected to MongoDB successfully');
 }).catch(err => {
     console.error('MongoDB connection error:', err);
 });

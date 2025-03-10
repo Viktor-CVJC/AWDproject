@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Venue = require('./models/venue');
 const venueData = require('./data/venueData.js');
 
-mongoose.connect('mongodb://localhost:27017/jkpgcity', {
+mongoose.connect('mongodb://mongodb:27017/jkpgcity', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(async () => {
