@@ -2,10 +2,8 @@ const mongoose = require('mongoose');
 const Venue = require('./models/venue');
 const venues = require('./data/venueData.js');
 
-mongoose.connect('mongodb://mongodb:27017/jkpgcity', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+mongoose.connect('mongodb://mongodb:27017/jkpgcity');
+
 const seedData = async () => {
     try {
         await Venue.deleteMany({});
