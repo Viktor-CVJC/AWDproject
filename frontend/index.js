@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modal event listeners
     addVenueBtn.addEventListener('click', () => {
-        // Reset form when adding new venue
         venueForm.reset();
         delete venueForm.dataset.editId;
         document.querySelector('.modal-content h2').textContent = 'Add New Venue';
@@ -144,27 +143,14 @@ function displayVenues(venues) {
     `).join('');
 }
 
-
-
-
-
-
-
-
-
-
-
-
 async function editVenue(venueId) {
     const response = await fetch(`http://localhost:3000/api/venues/${venueId}`);
     const venue = await response.json();
     
-    // Populate form with venue data
     document.getElementById('venue-name').value = venue.name;
     document.getElementById('venue-url').value = venue.url || '';
     document.getElementById('venue-district').value = venue.district || '';
     
-    // Update form for edit mode
     document.querySelector('.modal-content h2').textContent = 'Edit Venue';
     venueForm.dataset.editId = venueId;
     modal.style.display = 'block';

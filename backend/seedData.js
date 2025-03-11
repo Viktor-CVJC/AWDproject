@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Venue = require('./models/venue');
+const Venue = require('./models/venue.js');
 const venues = require('./data/venueData.js');
 
 mongoose.connect('mongodb://mongodb:27017/jkpgcity');
